@@ -327,8 +327,9 @@ class Adafruit_STMPE610_I2C(Adafruit_STMPE610):
     def touch_point(self):  # pylint: disable=too-many-branches
         """Read latest touched point value and convert to calibration-adjusted
         and rotated display coordinates. Commpatible with Displayio Button.
-        :return: x, y, pressure
-        rtype: int, int, int
+
+        :return: (x, y, pressure)
+        :rtype: tuple(int, int, int)
         """
         if not self.buffer_empty:
             while not self.buffer_empty:
@@ -466,8 +467,9 @@ class Adafruit_STMPE610_SPI(Adafruit_STMPE610):
     def touch_point(self):  # pylint: disable=too-many-branches
         """Read latest touched point value and convert to calibration-adjusted
         and rotated display coordinates. Commpatible with Displayio Button.
-        :return: x, y, pressure
-        rtype: int, int, int
+
+        :return: (x, y, pressure)
+        :rtype: tuple(int, int, int)
         """
         if not self.buffer_empty:
             while not self.buffer_empty:
